@@ -19,7 +19,7 @@
                 </div>
                 <ul class="product-controls">
                     <li data-filter="*">All</li>
-                    {% for category in categories %}
+                    {% for category in featured_categories %}
                     <li data-filter=".{{category.slug}}">{{category.title|title}}</li>
                     {% endfor %}
                 </ul>
@@ -27,12 +27,12 @@
         </div>
     </div>
     <div class="row" id="product-list">
-        {% for category in categories %}
+        {% for category in featured_categories %}
             {% for product in category.products.all %}
             <div class="col-lg-3 col-sm-6 mix {{category.slug}}">
                 <div class="single-product-item">
                     <figure>
-                        <a href="{%  url 'product-details' product.slug %}"><img src="{{product.thumbnail}}" style="height: 320px;" alt=""></a>
+                        <a href="{%  url 'product-details' product.slug %}"><img src="{{product.thumbnail}}" style="height: 180px;" alt=""></a>
                     </figure>
                     <div class="product-text">
                         <a href="{%  url 'product-details' product.slug %}" class="text-decoration-none">
@@ -66,7 +66,7 @@
             <div class="col-lg-3 col-sm-6 mix {{product.slug}}">
                 <div class="single-product-item">
                     <figure>
-                        <a href="{%  url 'product-details' product.slug %}"><img src="{{product.thumbnail}}" style="height: 320px;" alt=""></a>
+                        <a href="{%  url 'product-details' product.slug %}"><img src="{{product.thumbnail}}" style="height: 180px;" alt=""></a>
                     </figure>
                     <div class="product-text">
                         <a href="{%  url 'product-details' product.slug %}" class="text-decoration-none">
