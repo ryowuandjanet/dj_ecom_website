@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'product',
     'user_account',
+    'cart',
 ]
 
 MIDDLEWARE = [
@@ -64,7 +65,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'product.context_processors.categories'
+                'product.context_processors.categories',
+                'cart.context_processors.cart',
             ],
         },
     },
@@ -128,3 +130,6 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'user_account.User'
+
+SESSION_COOKIE_AGE = 86400
+CART_ID = 'cart'

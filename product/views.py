@@ -1,4 +1,5 @@
 from django.db.models import Q
+from django.http import HttpRequest, HttpResponse
 from django.views import generic
 from django.shortcuts import render
 from typing import Any, Dict
@@ -9,6 +10,7 @@ from django.core.paginator import (
     Paginator
 )
 
+from cart.carts import Cart
 from .models import (
     Category,
     Product,
