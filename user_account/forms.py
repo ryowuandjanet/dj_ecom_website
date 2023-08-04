@@ -173,9 +173,7 @@ class ResetPasswordConfirmForm(forms.Form):
         for field in self.fields:
             self.fields[field].widget.attrs.update({"class": "form-control"})
         
-        self.fields['current_password'].widget.attrs.update({"placeholder": "Enter your current password"})
-        self.fields['new_password1'].widget.attrs.update({"placeholder": "Enter your new password"})
-        self.fields['new_password2'].widget.attrs.update({"placeholder": "Confirm password"})
+
 
     def clean_new_password1(self, *args, **kwargs):
         new_password1 = self.cleaned_data.get('new_password1')
