@@ -66,7 +66,7 @@
                           </td>
                           <td class="total">$ {{item.subtotal|floatformat:"2"}}</td>
                           <td class="product-close">
-                            <a href="?product_id={{product.id}}&&quantity=={{item.quantity}}" class="text-decoration-none text-dark">
+                            <a href="?product_id={{product.id}}&&quantity=-{{item.quantity}}" class="text-decoration-none text-dark">
                                 X
                             </a>
                           </td>
@@ -77,13 +77,13 @@
               </table>
               <hr>
               <h4 class="text-center">
-                <strong>Total = </strong> $ {{cart.total}}
+                <strong>Total = </strong> $ {{cart.total|floatformat:"2"}}
               </h4>
             </div>
           <div class="cart-btn">
               <div class="row">
                   <div class="col-lg-6">
-                     <form action="{% url 'add-coupon'  %}" method="POST">
+                     <form action="{% url 'add-coupon' %}" method="POST">
                         {% csrf_token %}
                         <div class="coupon-input">
                             <input type="text" name="coupon" placeholder="Enter cupone code">
